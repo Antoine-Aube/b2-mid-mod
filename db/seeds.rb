@@ -12,12 +12,13 @@
 @department3 = Department.create!(name: "Human Resources", floor: 3)
 
 #employees
-@Antoine = Employee.create!(name: "Antoine", level: 1, department_id: @department2.id)
-@Samantha = Employee.create!(name: "Samantha", level: 2, department_id: @department2.id)
-@Eric = Employee.create!(name: "Eric", level: 2, department_id: @department1.id)
-@Jenny = Employee.create!(name: "Jenny", level: 3 , department_id: @department1.id)
-@Marge = Employee.create!(name: "Marge", level: 1, department_id: @department3.id)
-@Homer = Employee.create!(name: "Homer", level: 2, department_id: @department3.id)
+# @Antoine = Employee.create!(name: "Antoine", level: 1, department_id: @department2.id)
+@Antoine = @department2.employees.create!(name: "Antoine", level: 1)
+@Samantha = @department2.employees.create!(name: "Samantha", level: 2)
+@Eric = @department1.employees.create!(name: "Eric", level: 2)
+@Jenny = @department1.employees.create!(name: "Jenny", level: 3)
+@Marge = @department3.employees.create!(name: "Marge", level: 1)
+@Homer = @department3.employees.create!(name: "Homer", level: 2)
 
 #tickets
 @ticket1 = Ticket.create!(subject: "Fix Accounting", age: 3)

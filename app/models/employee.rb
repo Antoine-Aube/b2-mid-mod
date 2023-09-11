@@ -4,4 +4,12 @@ class Employee < ApplicationRecord
   has_many :tickets, through: :employee_tickets
   validates :name, presence: true
   validates :level, presence: true
+
+  def tickets_oldest_to_newest
+    self.tickets.order(age: :desc)
+  end
+
+  def oldest_ticket
+    self.tickets_oldest_to_newest.first
+  end
 end

@@ -12,3 +12,10 @@
 <h1>Oldest Ticket</h1>
 <p>Subject: <%= @employee.oldest_ticket.subject  %>
 <p>Age: <%= @employee.oldest_ticket.age %>
+
+<h1>Add a ticket to employee</h1>
+  <%= form_with url: "/employee/#{@employee.id}/tickets", method: :post, data: {turbo: false} do |f| %>
+  <%= f.label :ticket_id, "Ticket ID" %>
+  <%= f.number_field :ticket_id %>
+  <%= f.submit "Add Ticket" %>
+<% end %> 

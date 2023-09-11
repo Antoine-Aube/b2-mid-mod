@@ -32,7 +32,7 @@
 @ticket9 = Ticket.create!(subject: "Fix Hiring", age: 1)
 @ticket10 = Ticket.create!(subject: "Fix Firing", age: 1)
 @ticket11 = Ticket.create!(subject: "Fix Benefits", age: 2)
-@ticket12 = Ticket.create!(subject: "Fix Payroll", age: 1)
+@ticket12 = Ticket.create!(subject: "Fix Payroll", age: 9)
 #employee_tickets
 @employee_ticket1 = EmployeeTicket.create!(employee_id: @Antoine.id, ticket_id: @ticket1.id)
 @employee_ticket2 = EmployeeTicket.create!(employee_id: @Antoine.id, ticket_id: @ticket2.id)
